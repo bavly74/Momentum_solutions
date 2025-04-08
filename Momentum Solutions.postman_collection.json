@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "b7fac237-5b21-44c4-9748-3b341fd02c1a",
+		"name": "Momentum Solutions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24471046"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/register?name=bavly&email=bavly@gmail.com&password=123456789&password_confirmation=123456789",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "bavly"
+						},
+						{
+							"key": "email",
+							"value": "bavly@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123456789"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/login/?email=bavly@gmail.com&password=123456789",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "bavly@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|PaX7h5oS8kKnzfmYrphb7YoaSp2gd778fjhW5JHg660fc199",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/logout/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|EeHArCLlExL9IQp5jbJFfta3F6TBSznwVnutu3x609dd7a7b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/posts/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|rjulDWmraVnIwhZn0wUcqFD6oJqHdFu8t7Lb8IYB0cce4e1a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/store/post/?title=post 1&content=post 1 body",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"store",
+						"post",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "post 1"
+						},
+						{
+							"key": "content",
+							"value": "post 1 body"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|mQkDLQMikllPuTtNWWSrCNXtKAd5WyOvg4CuLzLUe8bdaf13",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated post title\",\r\n    \"content\": \"Updated content of the post\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/post/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
